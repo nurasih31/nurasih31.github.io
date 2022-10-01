@@ -1,0 +1,137 @@
+<center><h1>The Top 7 of My Best Friends </h1></center>
+<hr>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+  body {
+    font-family: "Gabriola";
+    font-size: 50pxpx;
+    background-color: tan;
+  }
+  tr {
+    background: chocolate;
+    padding: 2px solid;
+    text-align: center;
+  }
+  td {
+    background: peru;
+    cursor: pointer;
+    transition: .5s;
+    padding: 2px solid;
+    text-align: center;
+  }
+  td:hover {
+    background: wheat;
+  }
+  .tabelsaya {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+  }
+
+</style>
+
+<table class="tabelsaya">
+  <tr>
+    <th>No</th>
+    <th>Nama Kawan</th>
+    <th>Alamat</th>
+    <th >Aksi</th>
+  </tr>
+  <tr id="row__1">
+    <td>1</td>
+    <td class="nama_kawan">Sophiyanti Dewi</td>
+    <td class="alamat_kawan">Penggung,Kota Cirebon</td>
+    <td class="hapus" id="hapus__1">Hapus</td>
+  </tr>
+  <tr id="row__2">
+    <td>2</td>
+    <td class="nama_kawan">Indah</td>
+    <td class="alamat_kawan">Permata,Kota Cirebon</td>
+    <td class="hapus" id="hapus__2">Hapus</td>
+  </tr>
+  <tr id="row__3">
+    <td>3</td>
+    <td class="nama_kawan">Inggit Agustina</td>
+    <td class="alamat_kawan">Gunung Jati,Cirebon</td>
+    <td class="hapus" id="hapus__3">Hapus</td>
+  </tr>
+  <tr id="row__4">
+    <td>4</td>
+    <td class="nama_kawan">Maya Alfiyana</td>
+    <td class="alamat_kawan">Plered,Cirebon</td>
+    <td class="hapus " id="hapus__4">Hapus</td>
+  </tr>
+  <tr id="row__5">
+    <td>5</td>
+    <td class="nama_kawan">Ita Juwita</td>
+    <td class="alamat_kawan">Palimanan,Cirebon</td>
+    <td class="hapus" id="hapus__5">Hapus</td>
+  </tr>
+</tr>
+<tr id="row__6">
+  <td>6</td>
+  <td class="nama_kawan">Tanti</td>
+  <td class="alamat_kawan">Ciledug,Cirebon</td>
+  <td class="hapus" id="hapus__5">Hapus</td>
+</tr>
+</tr>
+<tr id="row__7">
+  <td>7</td>
+  <td class="nama_kawan">Herlina Surisma</td>
+  <td class="alamat_kawan">Pegambiran,Kota Cirebon</td>
+  <td class="hapus" id="hapus__5">Hapus</td>
+</tr>
+</table>
+
+<script>
+  $(document).ready(function(){
+     // alert(0)
+    $('.nama_kawan').click(function(){
+      // alert(1)
+      let isi = $(this).text();
+      // alert(isi);
+      let isi2 = prompt('Apakah anda yakin ingin mengubahnya?:',isi);
+      if(!isi2) return;
+      // alert(isi2);
+
+      $(this).text(isi2);
+    })
+ 
+    $('.alamat_kawan').click(function(){
+     // alert(1)
+     let isi = $(this).text();
+     // alert(isi);
+     let isi2 = prompt('Apakah anda yakin ingin mengubahnya?:',isi);
+     if(!isi2) return;
+     // alert(isi2);
+
+     $(this).text(isi2);
+    })
+
+
+    $('.hapus').click(function(){
+      // alert(1)
+     let ya = confirm('Apakah anda yakin ingin menghapusnya?jika YA klik OK');
+     if(!ya) return;
+
+     let id = $(this).prop('id');
+     // alert(id);
+
+
+     let rid = id.split('__');
+     let baris_ke = rid[1];
+
+     // alert(baris_ke);
+
+     $('#row__'+baris_ke).slideUp()
+
+
+
+     // alert('Anda Yakin')
+  
+
+    })
+
+  })
+</script>
